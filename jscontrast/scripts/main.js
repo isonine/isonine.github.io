@@ -1,9 +1,10 @@
 
 var splitCSV = function (csv){
+  
   var partsOfStr = csv.split(',');
   if (partsOfStr[0]>255||partsOfStr[1]>255||partsOfStr[2]>255){
-    alert("Invalid input");
-    window.location.reload();
+    alert("Invalid input (out of range)");
+    throw new Error('Invalid input (>255)');
   }
   return partsOfStr;
 }
